@@ -88,7 +88,7 @@ public class UselessRemoteBASH implements Scheduler {
         }
         Job j= pendingJobs.remove(0);
         TaskInfo ti= j.makeTask(o.getSlaveId());
-        driver.launchTasks(
+        sd.launchTasks(
           Collections.singletonList(o.getId()),
           Collections.singletonList(ti)
         );

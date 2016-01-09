@@ -16,7 +16,7 @@ public class UselessRemoteBASH implements Scheduler {
 
   // main callback, receives offers, launches tasks
   private boolean submitted= false;
-  public void resourceOffers(SchedulerDriver driver, java.util.List<Offer> offers) {
+  public void resourceOffers(SchedulerDriver sd, java.util.List<Offer> offers) {
     synchronized(this) {
       if(submitted) {
         for(Offer o : offers) {
@@ -31,7 +31,7 @@ public class UselessRemoteBASH implements Scheduler {
       // we should then decline all the other offers offered to free them up
       Offer offer= offers.get(0);
       TaskInfo ti= makeTask(offer.getSlaveId());
-      driver.launchTasks(
+      sd.launchTasks(
         Collections.singletonList(offer.getId()), // list of offers per one slave
         Collections.singletonList(ti) // list of tasks to launch on slave
       );
