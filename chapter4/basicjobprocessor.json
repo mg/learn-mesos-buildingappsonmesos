@@ -1,0 +1,9 @@
+{
+  "jobs": [
+    {
+      "cpus": 0.5,
+      "mem": 100,
+      "command": "sleep 60; echo hello world"
+    }
+  ]
+}
