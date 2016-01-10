@@ -57,8 +57,8 @@ Offer.Operation unreserveOp= Offer.Operation
   .setUnreserve(unreserve)
   .build();
 
-  driver.acceptOffers(
-    Collections.singletonList(offer.getId()),
-    Collections.singletonList(unreserveOp),
-    Fillters.newBuilder().build()
-  );
+driver.acceptOffers(
+  Collections.singletonList(offer.getId()),
+  Collections.singletonList(unreserveOp),
+  Fillters.newBuilder().build()
+);
